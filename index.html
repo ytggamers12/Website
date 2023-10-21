@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #myButton {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <button id="myButton">Click Me</button>
+
+    <script>
+        // Function to generate a random color
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        // Function to change button color on click
+        function changeButtonColor() {
+            const button = document.getElementById('myButton');
+            button.style.backgroundColor = getRandomColor();
+        }
+
+        // Attach the click event handler
+        const button = document.getElementById('myButton');
+        button.addEventListener('click', changeButtonColor);
+    </script>
+</body>
+</html>
